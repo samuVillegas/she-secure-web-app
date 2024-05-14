@@ -1,6 +1,6 @@
 export default async (start, end) => {
   try {
-    const result = await fetch("https://yammering-tine-leisaoft-1527e89d.koyeb.app/calculate", {
+    const result = await fetch("http://35.224.225.59:8080/calculate", {
       method: "POST",
       body: JSON.stringify({
         start: {
