@@ -1,5 +1,5 @@
 export default (data) => {
-  const { safest_path } = data;
+  const { shortest_path_risk } = data;
   console.log(safest_path);
   const u = Object.values(safest_path["lat_lon_u"]);
   const v = Object.values(safest_path["lat_lon_v"]);
