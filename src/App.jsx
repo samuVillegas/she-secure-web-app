@@ -1,7 +1,7 @@
 import { Box, Fab } from "@mui/material";
 import Map from "./Map";
 // import gsonData1 from "./data/shortest_path.json";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import calculateApi from "./api/calculate";
 import processData from "./process/process-data";
 
@@ -17,20 +17,10 @@ export default function App() {
   const [gsonData, setGeoData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    console.log(startPosition);
-  }, [startPosition]);
-
-  useEffect(() => {
-    console.log(endPosition);
-  }, [endPosition]);
-
   const calculate = async () => {
     setLoading(true);
     const data = await calculateApi(startPosition, endPosition);
-    console.log(data);
     const dataProcessed = processData(data);
-    console.log(dataProcessed);
     setGeoData(dataProcessed);
     setLoading(false);
   };

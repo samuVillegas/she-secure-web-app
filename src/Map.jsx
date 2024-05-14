@@ -14,7 +14,6 @@ export default function Map({
   setEndPosition,
   loading,
 }) {
-  console.log(gsonData);
   return (
     <MapContainer center={[6.25184, -75.56359]} zoom={12}>
       <TileLayer

@@ -16,7 +16,6 @@ export default async (start, end) => {
         "Content-Type": "application/json",
       },
     });
-    console.log(result);
     return result.json();
   } catch (err) {
     console.log(err);

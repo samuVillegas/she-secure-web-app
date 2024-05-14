@@ -1,10 +1,7 @@
 export default (data) => {
   const { shortest_path_risk } = data;
-  console.log(safest_path);
-  const u = Object.values(safest_path["lat_lon_u"]);
-  const v = Object.values(safest_path["lat_lon_v"]);
-  console.log(u);
-  console.log(v);
+  const u = Object.values(shortest_path_risk["lat_lon_u"]);
+  const v = Object.values(shortest_path_risk["lat_lon_v"]);
   const features = [];
   for (let i = 0; i < u.length; i++) {
     const uConverted = convertToArray(u[i]);
