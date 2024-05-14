@@ -19,5 +19,6 @@ export default async (start, end) => {
     return result.json();
   } catch (err) {
     console.log(err);
+    return false
   }
 };

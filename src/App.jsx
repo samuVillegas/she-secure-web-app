@@ -4,7 +4,7 @@ import Map from "./Map";
 import { useState } from "react";
 import calculateApi from "./api/calculate";
 import processData from "./process/process-data";
-
+import { CircularProgress } from "@mui/material";
 export default function App() {
   const [startPosition, setStartPosition] = useState({
     lat: 6.246207,
@@ -20,6 +20,11 @@ export default function App() {
   const calculate = async () => {
     setLoading(true);
     const data = await calculateApi(startPosition, endPosition);
+    if (!data) {
+      setLoading(false);
+      window.alert("Ha ocurrido un error, intenta más tarde");
+      return;
+    }
     const dataProcessed = processData(data);
     setGeoData(dataProcessed);
     setLoading(false);
@@ -47,6 +52,20 @@ export default function App() {
       >
         START
       </Fab>
+      {loading ? (
+        <Fab
+          sx={{
+            position: "absolute",
+            bottom: 80,
+            right: 20,
+          }}
+          color="primary"
+          aria-label="add"
+          onClick={calculate}
+        >
+          <CircularProgress color="secondary" />
+        </Fab>
+      ) : null}
     </Box>
   );
 }
