@@ -1,17 +1,7 @@
 import "./index.css";
 import "leaflet/dist/leaflet.css";
-import L from "leaflet";
-import MakerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
-import MakerIconShadow from "leaflet/dist/images/marker-shadow.png";
-import MarkerIcon from "leaflet/dist/images/marker-icon.png";
-
-let DefaultIcon = L.icon({
-  iconUrl: MarkerIcon,
-  shadowUrl: MakerIconShadow,
-  iconRetinaUrl: MakerIcon2x,
-});
-
-L.Marker.prototype.options.icon = DefaultIcon;
+import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
+import "leaflet-defaulticon-compatibility";
 
 import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
 import DraggableMarker from "./Market";
